@@ -113,12 +113,12 @@ p{
   @extend %relative;
   width:100%;
   margin-right: 20px;
-  padding:30px;
+  padding-left:30px;
   overflow-x:scroll;
 }
 .carousel-sec__title{
   display: inline-block;
-  margin-left:10px;
+  padding:20px 0 20px 40px;
   font-size: $big-font;
   color: $light-color-white;
   @extend %cursor;
