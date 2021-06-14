@@ -1,0 +1,156 @@
+/*Base*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+/*Variables*/
+/*placeholder*/
+.list-container, .register__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.register__title, a, input::placeholder {
+  color: #eeeeee;
+}
+
+a:hover, .container__user__data__sign-up, .user-information, .register {
+  color: #fff;
+}
+
+.container__user__data__sign-up, a {
+  cursor: pointer;
+}
+
+/*Layout and elements*/
+body {
+  display: grid;
+  grid-template-columns: 1fr 100fr 1fr;
+  grid-template-rows: 100px 1fr 100px;
+  min-width: 320px;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Mulish", sans-serif;
+  background: linear-gradient(#903749, #2b2e4a, #53354a);
+}
+
+.head {
+  grid-column: 1/span 2;
+  grid-row: 1;
+  height: 100px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.head .head__icon {
+  grid-column: 1/2;
+  letter-spacing: -2px;
+  align-self: self-start;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.register {
+  display: grid;
+  grid-column: 1/span 2;
+  grid-row: 2;
+  min-width: 300px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  border: 2px solid #eeeeee;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 4fr;
+  grid-column: 1/span 2;
+  grid-row: 3;
+  height: 100px;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
+/*Components*/
+.register__title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.register__container {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.user-information, .container__user__data__sign-up {
+  border: none;
+  outline: none;
+}
+
+.user-information {
+  margin: 10px 0;
+  padding: 8px;
+  border-bottom: 2px solid #eeeeee;
+  background: transparent;
+}
+
+.container__user__data__sign-up {
+  border-radius: 20px;
+  margin: 10px 0 20px;
+  padding: 8px;
+  letter-spacing: 2px;
+  background: #903749;
+}
+
+.register__link-to-sign-in {
+  text-align: center;
+  margin: 10px 0 20px;
+  font-size: 2.2rem;
+}
+
+.list-container {
+  grid-column: 1/5;
+  position: absolute;
+  bottom: 0;
+  margin: 40px 0 10px;
+  list-style: none;
+}
+
+.list-container__item {
+  margin: 0 8px;
+  font-size: 2.2rem;
+}
+
+.container__user__data__sign-up:hover {
+  background: linear-gradient(#53354a, #903749);
+}
+
+a:hover {
+  font-weight: 700;
+}
+
+.list-container__item a:hover {
+  text-decoration: underline;
+}
+
+.user-information:focus {
+  border-bottom: 3px ridge #e84545;
+}
+
+@media only screen and (min-width: 500px) {
+  .list-container {
+    flex-direction: row;
+  }
+}
+
+/*# sourceMappingURL=register.css.map */

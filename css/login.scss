@@ -1,0 +1,224 @@
+/* Base*/
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+/*Variables*/
+  $primary-color-blue:#2b2e4a;
+  $secondary-color-red:#e84545;
+  $complimentary-color-red:#903749;
+  $dark-color-red:#53354a;
+  $light-color-white:#cccccc;
+  $primary-font:'Mulish', sans-serif;
+  $small-font:1.6rem;
+  $normal-font:1.8rem;
+  $big-font:2rem;
+  $almost-huge-font:2.2rem;
+  $huge-font:3rem;
+  $thin-font:300;
+  $fat-font:500;
+  $chubby-font:700;
+  $small-space:8px;
+  $normal-space:10px;
+  $big-space:20px;
+
+/*placeholder*/
+%cursor {
+  cursor:pointer;
+}
+%flex{
+  display: flex;
+  flex-direction: column;
+}
+%grid{
+  display: grid;
+}
+%light-color-white{
+  color:$light-color-white;
+}
+%none{
+  border:none;
+  outline: none;
+}
+%flex-center{
+  display: flex;
+  align-items:center;
+}
+
+/*Element and layout*/
+body{
+  min-width: 320px;
+  width: 100%;
+  padding:$small-space;
+  font-family: $primary-font;
+  @extend %light-color-white;
+  background: linear-gradient( $dark-color-red, $complimentary-color-red, $primary-color-blue);
+}
+header{
+  height: 100px;
+  margin-bottom: $big-space;
+  padding:$small-space;
+}
+a{
+  text-decoration: none;
+  color: $light-color-white;
+  font-size: $small-font;
+  @extend %cursor;
+}
+.head .head__icon{
+  letter-spacing: -2px;
+  align-self: self-start;
+  font-size: $huge-font;
+  font-weight: $chubby-font;
+}
+main{
+  @extend %grid;
+  grid-template-columns: 1fr 100fr 1fr;
+  min-width: 300px;
+  width: 100%;
+}
+input::placeholder{
+  @extend %light-color-white;
+}
+ul{
+  list-style: none;
+}
+/*Module and components*/
+.login-container{
+  @extend %grid;
+  grid-column: 2;
+  grid-template-columns:10% 30% 20% 30% 10%;
+  min-height: calc(100vh - 200px);
+  margin: $big-space auto;
+  padding: 30px 0;
+  font-size: $almost-huge-font;
+  border-radius: $big-space;
+  border: 2px solid $light-color-white;
+  background: rgba(255, 255, 255,0.1);
+}
+.login-container__form{
+  @extend %flex;
+  font-size: $almost-huge-font;
+}
+.login__title{
+  text-align: center;
+  font-size: $huge-font;
+  margin-bottom: $big-space;
+}
+.login-container__form,.login__title,.user__information,.login__action,.login__register,.login__account-actions{
+  grid-column: 2/5;
+  margin: 20px 0 0;
+}
+.user__information{
+  @extend %none;
+  background: transparent;
+  border-bottom: 1px solid $light-color-white;
+  padding: $normal-space;
+  font-family: $primary-font;
+  color:#ffffff;
+}
+.login__action{
+  border-radius: $big-space;
+  padding:$normal-space;
+  @extend %none;
+  border:none;
+  background: $complimentary-color-red;
+  @extend %light-color-white;
+  letter-spacing: 3px;
+  box-shadow:0px 0px 2px 1px $primary-color-blue;
+  text-align: center;
+}
+.login__account-actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20%;
+}
+.account-actions__remember-user{
+  @extend %flex-center;
+  font-size: 1.2rem;
+}
+.remember-user__check{
+  height: 15px;
+  width: $big-space;
+  margin-right: 5px;
+}
+.remember-user__check,.account-actions__lost-password{
+  font-size: 1.2rem;
+}
+.account-actions__lost-password{
+  text-align: right;
+}
+.login-container__social-networks{
+  grid-column: 2/5;
+  height: 90px;
+  margin: 0 auto 20%;
+}
+.social-networks__links{
+  @extend %grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 14%;
+}
+.social-networks__links .links__item {
+  @extend  %flex;
+  height: 100%;
+  width: 45%;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  justify-self:center;
+}
+.social-networks__links .links__item a{
+  font-size: 1.4rem;
+}
+.links__icons{
+  width: 40px;
+  height:40px;
+  margin:5px;
+}
+footer{
+  @extend %grid;
+  grid-template-columns:1fr 1fr 1fr 4fr;
+  height: 100px;
+  position: relative;
+}
+.list-container{
+  @extend %flex;
+  grid-column:1/5;
+  position: absolute;
+  bottom: 0;
+  margin: 40px 0 $normal-space;
+  list-style: none;
+}
+.list-container__item{
+  margin:5px 8px;
+}
+.login__register a{
+  font-weight: $chubby-font;
+}
+/*Status*/
+a:hover{
+  color: #fff;
+}
+footer a:hover{
+  text-decoration: underline;
+}
+
+.login__action:hover{
+  @extend %cursor;
+  box-shadow: 0 0 2px 1px $light-color-white;
+}
+.login__email:focus, .login__password:focus{
+  border-bottom: 3px ridge $secondary-color-red;
+}
+.links__icons:hover{
+  transform: translateY(-2px);
+}
+@media only screen and (min-width:500px){
+  .list-container{
+    flex-direction: row;
+  }
+}

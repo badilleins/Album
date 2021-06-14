@@ -1,0 +1,169 @@
+/*Base*/
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+/*Variables*/
+  $primary-color-blue:#2b2e4a;
+  $secondary-color-blue:#2b2e4a;
+  $secondary-color-red:#e84545;
+  $complimentary-color-red:#903749;
+  $dark-color-red:#53354a;
+  $light-color-white:#eeeeee;
+  $primary-font:'Mulish', sans-serif;
+  $small-font:1.6rem;
+  $normal-font:1.8rem;
+  $big-font:2rem;
+  $almost-huge-font:2.2rem;
+  $huge-font:3rem;
+  $thin-font:300;
+  $fat-font:500;
+  $chubby-font:700;
+  $normal-space:10px;
+  $small-space:8px;
+  $big-space:20px;
+  $tiny-space:2px;
+
+/*placeholder*/
+@mixin grid-container($col1, $col2, $col3,$row1, $row2, $row3){
+  display: grid;
+  grid-template-columns: $col1 $col2 $col3;
+  grid-template-rows:   $row1 $row2 $row3;
+}
+@mixin grid-item($column, $row){
+  grid-column:$column;
+  grid-row: $row;
+}
+@mixin font($f-size, $f-weight){
+  font-size: $f-size;
+  font-weight: $f-weight;
+}
+%flex{
+  display: flex;
+  flex-direction: column;
+}
+%light-color{
+  color:$light-color-white;
+}
+%white-color{
+  color: #fff;
+}
+%cursor{
+  cursor:pointer;
+}
+/*Layout and elements*/
+body{
+  @include grid-container(1fr, 100fr, 1fr, 100px, 1fr, 100px);
+  min-width: 320px;
+  width: 100%;
+  min-height: 100vh;
+  font-family: $primary-font;
+  background: linear-gradient( $complimentary-color-red, $secondary-color-blue, $dark-color-red);
+}
+.head{
+  @include grid-item(1/ span 2,1);
+  height: 100px;
+  padding:15px;
+  margin-bottom: $big-space;
+}
+.head .head__icon{
+  grid-column: 1/2;
+  letter-spacing: -2px;
+  align-self: self-start;
+  @include font($huge-font, $chubby-font);
+}
+.register{
+  display: grid;
+  @include grid-item(1/ span 2,2);
+  min-width: 300px;
+  margin: $big-space auto;
+  padding:15px $big-space;
+  border: 2px solid $light-color-white;
+  border-radius: $big-space;
+  background:rgba(255,255,255,0.1);
+  @extend %white-color;
+}
+footer{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 4fr;
+  @include grid-item(1/ span 2,3);
+  height: 100px;
+  position: relative;
+}
+input::placeholder{
+  @extend %light-color;
+}
+a{
+  text-decoration: none;
+  font-size: $small-font;
+  @extend %light-color;
+  @extend %cursor;
+}
+/*Components*/
+.register__title{
+  text-align: center;
+  margin-bottom: $big-space;
+  @include font($huge-font, $chubby-font);
+  @extend %light-color;
+}
+.register__container{
+  @extend %flex;
+  @include font($almost-huge-font, $fat-font);
+}
+.user-information, .container__user__data__sign-up{
+  border:none;
+  outline:none;
+}
+.user-information{
+  margin: $normal-space 0;
+  padding:$small-space;
+  @extend %white-color;
+  border-bottom: $tiny-space solid $light-color-white;
+  background:transparent;
+}
+.container__user__data__sign-up{
+  border-radius: $big-space;
+  margin: $normal-space 0 $big-space;
+  padding: $small-space;
+  letter-spacing:$tiny-space;
+  @extend %white-color;
+  background: $complimentary-color-red;
+  @extend %cursor;
+}
+.register__link-to-sign-in{
+  text-align: center;
+  margin:$normal-space 0 $big-space;
+  font-size:$almost-huge-font;
+}
+.list-container{
+  @extend %flex;
+  grid-column:1/5;
+  position: absolute;
+  bottom: 0;
+  margin: 40px 0 $normal-space;
+  list-style: none;
+}
+.list-container__item{
+  margin:0 $small-space;
+  font-size: $almost-huge-font;
+}
+.container__user__data__sign-up:hover{
+  background: linear-gradient($dark-color-red, $complimentary-color-red);
+}
+a:hover{
+  font-weight: $chubby-font;
+  @extend %white-color
+}
+.list-container__item a:hover{
+  text-decoration: underline;
+}
+.user-information:focus{
+  border-bottom: 3px ridge $secondary-color-red;
+}
+@media only screen and (min-width:500px){
+  .list-container{
+    flex-direction: row;
+  }
+}
