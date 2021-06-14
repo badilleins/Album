@@ -160,6 +160,7 @@ footer{
   grid-template-columns:1fr 1fr 1fr 4fr;
   @include size(100%,100px);
   position: relative;
+  padding-left: 30px;
 }
 footer a{
   color: $light-color-white;
@@ -232,13 +233,13 @@ footer a:hover{
 }
 /*carousel*/
 .container__video:hover ~ .container__video{
-  transform: translate3d(100px, 0, 0);
+  transform: translate3d(80px, 0, 0);
 }
 .carousel-sec__container:hover .container__video{
   @include opacity(0.3);
 }
 .carousel-sec__container:hover .container__video:hover{
-  transform: scale(1.5);
+  transform: scale(1.2);
   @include opacity(1);
 }
 .video__details:hover{
@@ -250,5 +251,12 @@ footer a:hover{
   }
   .list-container .list-container__item{
     display: inline-block;
+  }
+  .container__video:hover ~ .container__video{
+    transform: translate3d(100px, 0, 0);
+  }
+  .carousel-sec__container:hover .container__video:hover{
+    transform: scale(1.5);
+    @include opacity(1);
   }
 }
