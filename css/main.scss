@@ -116,7 +116,7 @@ p{
   padding-left:30px;
   overflow-x:scroll;
 }
-.carousel-sec__title{
+.carousel-sec__title a{
   display: inline-block;
   padding:20px 0 20px 40px;
   font-size: $big-font;
@@ -187,7 +187,7 @@ footer a:hover{
   text-decoration: underline;
 }
 /*Desplegable menu*/
-.head__navigation:hover ul, ul:hover{
+.head__navigation:hover ul, .bar__container:hover{
   display: block;
 }
 .navigation__bar .bar__container li a:hover{
@@ -251,6 +251,9 @@ footer a:hover{
   }
   .list-container .list-container__item{
     display: inline-block;
+  }
+  .carousel-sec__title a{
+    font-size: $almost-huge-font;
   }
   .container__video:hover ~ .container__video{
     transform: translate3d(100px, 0, 0);

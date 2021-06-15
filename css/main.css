@@ -17,7 +17,7 @@
   position: relative;
 }
 
-.action__button, .carousel-sec__title, .head__navigation, a {
+.action__button, .carousel-sec__title a, .head__navigation, a {
   cursor: pointer;
 }
 
@@ -109,7 +109,7 @@ p {
   overflow-x: scroll;
 }
 
-.carousel-sec__title {
+.carousel-sec__title a {
   display: inline-block;
   padding: 20px 0 20px 40px;
   font-size: 2rem;
@@ -194,7 +194,7 @@ footer a:hover {
 }
 
 /*Desplegable menu*/
-.head__navigation:hover ul, ul:hover {
+.head__navigation:hover ul, .bar__container:hover {
   display: block;
 }
 
@@ -270,6 +270,10 @@ footer a:hover {
 
   .list-container .list-container__item {
     display: inline-block;
+  }
+
+  .carousel-sec__title a {
+    font-size: 2.2rem;
   }
 
   .container__video:hover ~ .container__video {
